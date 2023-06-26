@@ -1,0 +1,14 @@
+import mongoose from "mongoose";
+
+// Create a fruit schema
+const favFruitSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  favFruit: String,
+});
+
+// Create a Fruit model using the fruit schema
+export const FavFruit = mongoose.model("fav_fruits", favFruitSchema);
+export default mongoose;
