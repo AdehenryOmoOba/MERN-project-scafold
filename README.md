@@ -1,3 +1,3 @@
 # MERN Project Scafold
 
-## Starting your next MERN stack project just go a little easier...
+## Starting your MERN stack project just go a little easier :smiley:
