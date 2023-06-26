@@ -19,7 +19,7 @@ app.get("/favfruits", (req, res) => {
     });
 });
 
-// Connect to MongoDB (replace 'process.env.DB_STRING' with your MongoDB connection string) and start server.
+// Connect to MongoDB (replace 'process.env.DB_STRING' with your MongoDB connection string).
 mongoose
   .connect(
     process.env.DB_STRING,
