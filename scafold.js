@@ -194,7 +194,4 @@ function promptUser() {
   });
 }
 
-// promptUser();
-// console.log("node enviroment", process.NODE_ENV.config());
-// process.NODE_ENV.config;
-console.log("enviroment variable: ", process.env.DB_STRING);
+promptUser();
