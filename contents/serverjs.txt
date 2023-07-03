@@ -1,8 +1,10 @@
+import dotenv from "dotenv";
 import express from "express";
 import mongoose, { FavFruit } from "../db/mongooseSchema.js";
 
 const PORT = 7000 || process.env.PORT;
 export const app = express();
+dotenv.config();
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello, world!" });
@@ -21,13 +23,10 @@ app.get("/favfruits", (req, res) => {
 
 // Connect to MongoDB (replace 'process.env.DB_STRING' with your MongoDB connection string).
 mongoose
-  .connect(
-    process.env.DB_STRING,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(process.env.DB_STRING, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB");
     app.listen(PORT, () => {

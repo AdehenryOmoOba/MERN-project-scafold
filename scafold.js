@@ -1,4 +1,3 @@
-require("dotenv").config();
 const { execSync } = require("child_process");
 const readline = require("readline");
 const fs = require("fs");
@@ -24,6 +23,7 @@ const expressPkgJSON = fs.readFileSync("./contents/expressPkgJSON.txt");
 const mongoosePkgJSON = fs.readFileSync("./contents/mongoosePkgJSON.txt");
 const serverJS = fs.readFileSync("./contents/serverjs.txt");
 const mongooseSchema = fs.readFileSync("./contents/mongooseSchema.txt");
+const dotenv = fs.readFileSync("./contents/dotenv.txt");
 
 function createReactApp(projectPath) {
   console.log(`Creating a new React app at ${projectPath}...`);
@@ -137,7 +137,11 @@ function createExpressApp(projectPath) {
     console.log(`Installing expressJS in ${projectPath} directory...`);
     execSync("npm install express", { stdio: "inherit" });
 
+    execSync("npm install dotenv", { stdio: "inherit" });
+
     fs.writeFileSync("server.js", serverJS);
+
+    fs.writeFileSync(".env", serverJS);
 
     // Create a .gitignore file in the server directory
     fs.writeFileSync(".gitignore", `.env\nnode_modules`);
